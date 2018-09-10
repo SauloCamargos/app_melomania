@@ -1,0 +1,76 @@
+page-login {
+    .logo-wrapper {
+        background: #fff;
+        text-align: center;
+        padding: 25% 15px 50px 15px;
+    }
+    .list-input ion-item.input-email {
+        background: url(../assets/imgs/email.png) #fff;
+    }
+    .list-input ion-item.input-password {
+        background: url(../assets/imgs/password.png) #fff;
+    }
+    .list-input ion-item {
+        padding: 0px 15px 0px 35px;
+        margin: 0px 0px 10px 0px;
+        border-radius: 60px;
+        border: 1px solid #bbbbbb !important;
+        background-repeat: no-repeat !important;
+        background-position-x: 25px !important;
+        background-position-y: 17px !important;
+    }
+    .list-input {
+        position: relative;
+        top: -24px;
+        padding: 0px 15px;
+    }
+    .btn-wrapper {
+        padding: 0px 15px;
+    }
+    .btn-wrapper button {
+        height: 45px;
+        background: #fff;
+        color: #1E68C1;
+        text-transform: uppercase;
+    }
+    button.btn-forgot-password {
+        float: right;
+        background: transparent;
+        color: #fff;
+        margin-bottom: 15px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    button.btn-sign-up {
+        margin: 0px auto;
+        display: block;
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        margin-left: -94px;
+        background: transparent;
+        color: #fff;
+        margin-bottom: 15px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .aligner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    ion-spinner * {
+        fill: #fff !important;
+        stroke: #fff !important;
+    }
+    .scroll-content {
+        background: rgba(30, 104, 193, 1);
+        background: -moz-linear-gradient(45deg, rgba(30, 104, 193, 1) 0%, rgba(0, 28, 61, 1) 100%);
+        background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(30, 104, 193, 1)), color-stop(100%, rgba(0, 28, 61, 1)));
+        background: -webkit-linear-gradient(45deg, rgba(30, 104, 193, 1) 0%, rgba(0, 28, 61, 1) 100%);
+        background: -o-linear-gradient(45deg, rgba(30, 104, 193, 1) 0%, rgba(0, 28, 61, 1) 100%);
+        background: -ms-linear-gradient(45deg, rgba(30, 104, 193, 1) 0%, rgba(0, 28, 61, 1) 100%);
+        background: linear-gradient(45deg, rgba(30, 104, 193, 1) 0%, rgba(0, 28, 61, 1) 100%);
+    }
+}

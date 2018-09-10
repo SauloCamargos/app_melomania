@@ -1,0 +1,22 @@
+page-loader {
+    .aligner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+    }
+    ion-spinner * {
+        fill: #fff !important;
+        stroke: #fff !important;
+    }
+    .scroll-content {
+        background: rgba(30, 104, 193, 1);
+        background: -moz-linear-gradient(45deg, rgba(30, 104, 193, 1) 0%, rgba(0, 28, 61, 1) 100%);
+        background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(30, 104, 193, 1)), color-stop(100%, rgba(0, 28, 61, 1)));
+        background: -webkit-linear-gradient(45deg, rgba(30, 104, 193, 1) 0%, rgba(0, 28, 61, 1) 100%);
+        background: -o-linear-gradient(45deg, rgba(30, 104, 193, 1) 0%, rgba(0, 28, 61, 1) 100%);
+        background: -ms-linear-gradient(45deg, rgba(30, 104, 193, 1) 0%, rgba(0, 28, 61, 1) 100%);
+        background: linear-gradient(45deg, rgba(30, 104, 193, 1) 0%, rgba(0, 28, 61, 1) 100%);
+    }
+}

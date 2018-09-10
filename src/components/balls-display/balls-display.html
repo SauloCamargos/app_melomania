@@ -1,0 +1,16 @@
+<div padding>
+    <ng-template ngFor let-ball let-index="index" [ngForOf]="ballsHandler">
+        <img class="ball-icon" (click)="toggleStatus(index)" [hidden]="ball.active == false" [src]="'/assets/imgs/balls_active/ball_'+ball.id+'.png'" alt="" srcset="">
+        <img class="ball-icon" (click)="toggleStatus(index)" [hidden]="ball.active == true" [src]="'/assets/imgs/balls_inactive/ball_'+ball.id+'.png'" alt="" srcset="">
+    </ng-template>
+</div>
+<ion-grid>
+    <ion-row>
+        <ion-col>
+            <button ion-button block (click)="cancelEvent()" color="danger">Cancelar</button>
+        </ion-col>
+        <ion-col>
+            <button ion-button block (click)="confirmList()" color="secondary">Confirmar</button>
+        </ion-col>
+    </ion-row>
+</ion-grid>

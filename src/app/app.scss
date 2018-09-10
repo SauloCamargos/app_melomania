@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +12,126 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-spinner {
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.logo-wrapper {
+    background: #ffffff;
+}
+
+.toolbar-menu .logo-wrapper {
+    padding: 0px 20px;
+}
+
+.toolbar-menu ion-item {
+    padding: 0px 20px;
+}
+
+.toolbar-menu ion-label {
+    margin: 0px;
+}
+
+.toolbar-menu .user-name-wrapper,
+.content-menu .user-name-wrapper {
+    padding: 0px 15px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    bottom: -20.5px;
+}
+
+.toolbar-menu p.user-name,
+.content-menu p.user-name {
+    background: #fff;
+    padding: 10px 20px;
+    border: 2px solid #1E68C1;
+    border-radius: 35px;
+    margin: 0px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
+
+.toolbar-background {
+    background: rgba(30, 104, 193, 1);
+}
+
+ion-toolbar.toolbar-menu {
+    padding: 15px 0px 15px 0px;
+    background: #fff;
+    contain: initial;
+    overflow: initial;
+}
+
+.toolbar-menu .toolbar-background {
+    background: #fff;
+}
+
+ion-list.list-menu {
+    padding-top: 30px;
+}
+
+.toolbar-title,
+.toolbar .back-button {
+    color: #ffffff;
+}
+
+.menu-inner .content {
+    background: #1e68c1;
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, #1e68c1), color-stop(100%, #001c3d));
+    background: linear-gradient(0deg, #001c3d -25%, #1e68c1 50%) !important;
+}
+
+.header-md::after,
+.tabs-md[tabsPlacement="top"]>.tabbar::after,
+.footer-md::before,
+.tabs-md[tabsPlacement="bottom"]>.tabbar::before {
+    content: none;
+}
+
+.account-label {
+    color: #1E68C1 !important;
+    font-family: Roboto !important;
+    text-transform: uppercase !important;
+    font-size: 11px !important;
+}
+
+.account-value {
+    color: #1E68C1 !important;
+    font-size: 26px !important;
+    font-family: Roboto !important;
+}
+
+.list-menu ion-item {
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+.list-menu ion-item .item-inner {
+    border-bottom: none !important;
+}
+
+.toolbar button {
+    color: #fff;
+}
+
+ion-spinner {
+    width: 40px !important;
+    height: 40px !important;
+    margin: 0px auto !important;
+    text-align: center;
+    width: 100% !important;
+}
+
+ion-spinner * {
+    width: 28px;
+    height: 28px;
+    stroke: #444;
+    fill: #222;
+}

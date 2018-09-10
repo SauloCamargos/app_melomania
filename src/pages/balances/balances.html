@@ -1,0 +1,61 @@
+<!--
+  Generated template for the BalancesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Extrato</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col no-padding>
+                <ion-card>
+                    <ion-card-header class="account-label">
+                        Em conta
+                    </ion-card-header>
+                    <ion-card-content class="account-value">
+                        {{((user?.balances?.current[0]?.amount/100) || 0) | currency:'R$':'code'}}
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col no-padding>
+                <ion-card>
+                    <ion-card-header class="account-label">
+                        Bloqueado
+                    </ion-card-header>
+                    <ion-card-content class="account-value">
+                        {{((user?.balances?.unavailable[0]?.amount/100) || 0) | currency:'R$':'code'}}
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col no-padding>
+                <ion-card>
+                    <ion-card-header class="account-label">
+                        A Receber
+                    </ion-card-header>
+                    <ion-card-content class="account-value">
+                        {{((user?.balances?.future[0]?.amount/100) || 0) | currency:'R$':'code'}}
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+
+</ion-content>

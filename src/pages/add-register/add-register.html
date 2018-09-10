@@ -1,0 +1,65 @@
+<!--
+  Generated template for the AddRegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>AddRegister</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+    <ion-card (click)="openContest(lottery.id)" class="lottery-uppcoming">
+        <ion-card-content>
+            <ion-card-title class="lottery-uppcoming">
+                {{contest?.game_name}}
+            </ion-card-title>
+
+            <ion-item class="lottery-content" no-padding>
+                <!-- <h3>Sorteio:</h3>
+                <p>{{name}}</p> -->
+                <p><strong>Concurso:</strong> {{contest?.name}}</p>
+                <p><strong>Data do sorteio:</strong>{{contest?.draw_date | date:"dd/MM/yyyy HH:mm" }}</p>
+                <p><strong>Estado:</strong>{{contest?.game?.state_display }}</p>
+                <p><strong>Nº de sorteios:</strong>{{contest?.lotteries_number }}</p>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+    <ion-content>
+        <ion-item-group>
+            <ion-item-divider color="light">Selecione o sorteio do concurso</ion-item-divider>
+        </ion-item-group>
+        <ion-item>
+            <ion-label>Sorteios do concurso:</ion-label>
+            <ion-select [(ngModel)]="lottery_selected" [cancelText]="'Cancelar'" interface="action-sheet">
+                <ion-option *ngFor="let lottery of contest?.lotteries" [value]="lottery">{{lottery.name}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item-group>
+            <ion-item-divider color="light">Imagem da cartela</ion-item-divider>
+        </ion-item-group>
+        <ion-item class="card-background-page">
+            <button ion-button full (click)="takeImage()">
+            <ion-icon name="camera"></ion-icon> &nbsp; Tirar foto
+
+          </button>
+            <ion-card *ngIf="base64Image">
+                <img [src]="base64Image" />
+                <!-- <div class="card-title">São Paulo</div> -->
+                <!-- <div class="card-subtitle">41 Listings</div> -->
+            </ion-card>
+        </ion-item>
+        <ion-item-group>
+            <ion-item-divider color="light">Selecione os números da cartela/jogo</ion-item-divider>
+        </ion-item-group>
+
+        <balls-display [balls]="'[]'" (cancelList)="cancelResult()" (saveList)="saveResult($event)"></balls-display>
+
+    </ion-content>
+
+</ion-content>

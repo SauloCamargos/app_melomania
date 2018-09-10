@@ -1,0 +1,11 @@
+balls-display {
+    .ball-icon {
+        max-width: 9%;
+        padding: 0px;
+        display: inline-block;
+    }
+    [hidden],
+    template {
+        display: none !important;
+    }
+}
