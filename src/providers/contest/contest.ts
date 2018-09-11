@@ -41,7 +41,7 @@ export class ContestProvider extends CrudProvider {
   public getLotteries(id: number): Observable<any> {  
     return this.http.get<any>(`${SettingsProvider.api_url}/${this.prefix_service}/${id}/lotteries`);
   }
-  public getRecordsUser(data?: number): Observable<any> {
+  public getRecordsUser(data?: any): Observable<any> {
     let dataSend = {}
     if(data){
       dataSend = data;

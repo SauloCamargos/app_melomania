@@ -15,8 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'contest.html',
 })
 export class ContestPage implements OnInit {
-  lottery: any
-  records: any[];
+  lottery: any  
+  recordsList: any[];
+loadingRecords: boolean;
+configPaginator: boolean;
   constructor(
     public navCtrl: NavController, 
     private contestProvider: ContestProvider,
@@ -26,6 +28,7 @@ export class ContestPage implements OnInit {
 
   ngOnInit(){
     this.lottery = this.navParams.get('lottery');
+    this.getRecords({qtd: 12});
   }
 
   ionViewDidLoad() {
@@ -40,10 +43,29 @@ export class ContestPage implements OnInit {
     this.navCtrl.push('AddRegisterPage',{contest: $this.lottery.contest });
   }
 
-  getRecords(){
-    this.contestProvider.getRecordsUser().subscribe((response)=>{
-      
-    })
+  getRecords(data, callback = null) {
+    const $this = this;
+    if(!data.append){
+      this.recordsList = [];
+      this.loadingRecords = true;
+    }
+    // const pageGet = (data.page) ? data.page : 1;
+    // const qtd = (data.qtd) ? data.qtd : undefined;   
+    data.id = this.lottery.contest.id; 
+    data.user_id = 1; 
+    this.contestProvider.getRecordsUser(data).subscribe(response => {
+        this.configPaginator = response;
+        if(!data.append){          
+          this.recordsList = response.data;
+        }else{
+          response.data.forEach(element => {
+            $this.recordsList.push(element)
+          });
+        }
+        this.loadingRecords = false;
+        if(typeof  callback === "function" ){
+          callback(true);
+        }
+    });
   }
-
 }
