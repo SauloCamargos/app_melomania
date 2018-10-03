@@ -3,6 +3,7 @@ import { AuthProvider } from './../../providers/auth/auth';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { CreatAccountMoipPage } from '../creat-account-moip/creat-account-moip';
 
 /**
  * Generated class for the LoaderPage page.
@@ -34,7 +35,8 @@ export class LoaderPage {
   checkAuthentication(){
     this.authProvider.check().subscribe((response)=>{
       if(response.user){
-        this.navCtrl.setRoot(HomePage);
+        // this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(CreatAccountMoipPage);
       }
     },
     (response) => {

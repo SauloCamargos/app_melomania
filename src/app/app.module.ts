@@ -23,6 +23,8 @@ import { ContestProvider } from '../providers/contest/contest';
 import { LotteryProvider } from '../providers/lottery/lottery';
 import { Camera } from '@ionic-native/camera';
 import { RecordProvider } from '../providers/record/record';
+import { CreatAccountMoipPage } from '../pages/creat-account-moip/creat-account-moip';
+
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { RecordProvider } from '../providers/record/record';
     HomePage,
     ListPage,
     LoaderPage,
-    LoginPage
+    LoginPage,
+    CreatAccountMoipPage
   ],
   imports: [
     BrowserModule,
@@ -46,8 +49,9 @@ import { RecordProvider } from '../providers/record/record';
     MyApp,
     HomePage,
     ListPage,
-    LoaderPage,
-    LoginPage
+    LoaderPage,    
+    LoginPage,
+    CreatAccountMoipPage
   ],
   providers: [
     StatusBar,

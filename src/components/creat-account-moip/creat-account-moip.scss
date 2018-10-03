@@ -1,0 +1,22 @@
+creat-account-moip {
+    .controlers-slide{
+        position: absolute;
+        width: 100%;
+        bottom: 10px; 
+        z-index: 1;
+    }
+
+    .list-input ion-item {
+    padding: 0px 15px;
+    margin: 0px 0px 10px 0px;
+    border-radius: 60px;
+    border: 1px solid #bbbbbb !important;
+    background-repeat: no-repeat !important;
+    background-position-x: 25px !important;
+    background-position-y: 17px !important;
+}
+.list-input {
+    padding: 0px 15px 25px;
+}
+
+}

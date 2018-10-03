@@ -59,7 +59,7 @@ export class BallsDisplayComponent implements OnInit, OnChanges {
     const returnList = [];
     this.ballsHandler.forEach((element) => {
       if (element.active) {
-        returnList.push(element.id);
+        returnList.push(parseInt(element.id));
       }
     });
     this.saveList.emit(returnList.join(','));

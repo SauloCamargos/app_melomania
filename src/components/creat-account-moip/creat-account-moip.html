@@ -1,0 +1,54 @@
+<!-- Generated template for the CreatAccountMoipComponent component -->
+<ion-slides centeredSlides="false">
+  <ion-slide>
+    <h1>Bem vindo ao Melomania !!!</h1>
+    <p> É um prazer telo em nossa rede, para que possa realizar os seus registros
+      de jogos e ter a possibilidade de ganhar um bolada com eles e preciso que 
+      complete o seu cadastro.
+    </p>
+    <p>
+      Está preparado, então clique em <strong>PRÓXIMO</strong> e complete o cadastro.
+    </p>
+    
+  </ion-slide>
+  <ion-slide>
+        <form [formGroup]="formAccountMoip" (ngSubmit)="onSubmit()">
+    <h2 text-left padding>Dados pessoais:</h2>
+   
+
+    <ion-list class="list-input">
+        <ion-item>
+            <ion-input type="text" formControlName="name" name="name" placeholder="Nome"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="text" formControlName="lastName" name="lastName" placeholder="Sobrenome"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="text" formControlName="taxDocumentNumber" name="taxDocumentNumber" placeholder="CPF"></ion-input>
+        </ion-item>        
+    </ion-list>
+  </form>
+  </ion-slide>
+  <ion-slide>
+    <h1>Slide 3</h1>
+  </ion-slide>
+</ion-slides>
+<ion-row class="controlers-slide">
+    <ion-col>     
+      <button *ngIf="showPrevButton" (click)="goToPrevius()" ion-button  block icon-start>
+          <ion-icon name="ios-arrow-dropleft-outline"></ion-icon>
+          Voltar
+        </button>
+      </ion-col>
+
+    <ion-col>
+      <button (click)="goToNext()" *ngIf="!showSubmitButton" ion-button block icon-end>
+        Próximo
+        <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+      </button>
+      <button (click)="onSubmit()" *ngIf="showSubmitButton" ion-button block icon-end>
+        Enviar
+        <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+      </button>
+    </ion-col>
+</ion-row>

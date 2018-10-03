@@ -31,8 +31,8 @@
             <ion-grid>
                 <ion-row>
                     <ion-col col-10 offset-2>
-                        <p text-right><strong>Valor base:</strong> {{lottery?.contest?.price | currency:'R$':'symbol-narrow':'2.2-2'}}</p>
                         <p text-right><strong>Taxa administrativa:</strong> {{lottery?.contest?.admin_tax | currency:'R$':'symbol-narrow':'2.2-2'}}</p>
+                        <p text-right><strong>Valor base (por registro) :</strong> {{lottery?.contest?.price | currency:'R$':'symbol-narrow':'2.2-2'}}</p>
                         <hr>
                         <p text-right>{{lottery?.contest?.price + lottery?.contest?.admin_tax | currency:'R$':'symbol-narrow':'2.2-2'}}</p>
                     </ion-col>
@@ -49,7 +49,7 @@
                 <img [src]="record.image">
             </ion-thumbnail>
             <h2>Registrado dia:<br> {{record.created_at}}</h2>
-            <p>Números:<br> {{record.numbers}}</p>
+            <p>Números:<br> {{record.numbers}}</p>            
             <!-- <p>Hayao Miyazaki • 1988</p> -->
             <!-- <button ion-button clear item-end>View</button> -->
         </ion-item>
