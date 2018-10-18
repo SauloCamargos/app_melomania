@@ -12,22 +12,21 @@
     
   </ion-slide>
   <ion-slide>
-        <form [formGroup]="formAccountMoip" (ngSubmit)="onSubmit()">
-    <h2 text-left padding>Dados pessoais:</h2>
-   
-
-    <ion-list class="list-input">
-        <ion-item>
-            <ion-input type="text" formControlName="name" name="name" placeholder="Nome"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-input type="text" formControlName="lastName" name="lastName" placeholder="Sobrenome"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-input type="text" formControlName="taxDocumentNumber" name="taxDocumentNumber" placeholder="CPF"></ion-input>
-        </ion-item>        
-    </ion-list>
-  </form>
+        <form [formGroup]="formsAccountMoip[0]" (ngSubmit)="onSubmit()">
+          <h2 text-left padding>Dados pessoais:</h2>
+          <ion-list class="list-input">
+              <ion-item>
+                  <ion-input type="text" formControlName="name" name="name" placeholder="Nome"></ion-input>
+                  <p *ngIf="formsAccountMoip[0].controls.name.errors && formsAccountMoip[0].controls.name.dirty" class="danger" padding>Informe o nome.</p>
+              </ion-item>
+              <ion-item>
+                  <ion-input type="text" formControlName="lastName" name="lastName" placeholder="Sobrenome"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-input type="text" formControlName="taxDocumentNumber" name="taxDocumentNumber" placeholder="CPF"></ion-input>
+              </ion-item>        
+          </ion-list>
+        </form>
   </ion-slide>
   <ion-slide>
     <h1>Slide 3</h1>

@@ -54,7 +54,9 @@ export class HomePage implements OnInit {
     // console.log('Begin async operation', refresher);
     this.lotterysUpcoming = [];
     this.getData({qtd: 6,append: true}, ()=>{
-      $this.infiniteScrollEvent.enable(true)
+      if($this.infiniteScrollEvent){
+        $this.infiniteScrollEvent.enable(true)
+      }
       refresher.complete();
     }); 
     // setTimeout(() => {

@@ -17,7 +17,31 @@ export class CreatAccountMoipComponent implements OnInit {
   text: string;
   showSubmitButton: boolean = false;
   showPrevButton: boolean = false;
-  formAccountMoip: FormGroup
+  // formsAccountMoip: FormGroup[]
+  formsAccountMoip = []
+
+  person: {
+    name: string
+    lastName: string
+    birthDate: Date
+    phone:{
+      areaCode: string
+      number:string
+    },
+    address : {
+      street: string
+      streetNumber: string
+      district: string
+      zipCode: string
+      city: string
+      state: string
+    },
+    taxDocument:{
+      type:string
+      number:string
+    }
+  }
+
   constructor(
     private formBuilder: FormBuilder
   ) {
@@ -36,7 +60,7 @@ export class CreatAccountMoipComponent implements OnInit {
   }
 
   initForm(){
-    this.formAccountMoip = this.formBuilder.group({
+    this.formsAccountMoip[0] = this.formBuilder.group({
       name: [null, Validators.required],
       lastName: [null, Validators.required],
       taxDocumentNumber: [null, Validators.required],
@@ -45,9 +69,17 @@ export class CreatAccountMoipComponent implements OnInit {
 
   goToNext(){
     console.log("Next")
+    let currentIndex = this.slides.getActiveIndex();
+    if(currentIndex > 0){
+      if(!this.validateDataForm((currentIndex - 1))){
+        return;
+      }
+    }
+    
     this.slides.slideNext()
     this.checkIsEnd()
     this.checkIsBeginning()
+    
   }
   
   goToPrevius(){
@@ -76,5 +108,14 @@ export class CreatAccountMoipComponent implements OnInit {
   onSubmit(){
     console.log("Enviar os dados")
   }
+
+  validateDataForm(indexValidate){
+    // console.log(this.slides.getActiveIndex())
+    console.log(this.formsAccountMoip[indexValidate].invalid)
+    // if(this.formAccountMoip.valid){
+
+    // }
+  }
+
 
 }

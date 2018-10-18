@@ -13,6 +13,7 @@
         <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="" refreshingSpinner="dots" refreshingText=""></ion-refresher-content>
     </ion-refresher>
     <ion-spinner *ngIf="loadingUpcoming" name="dots"></ion-spinner>
+    
     <ion-card (click)="openContest(index)" class="lottery-uppcoming" *ngFor="let item of lotterysUpcoming; let index = index">
         <ion-card-content>
             <ion-card-title class="lottery-uppcoming">
